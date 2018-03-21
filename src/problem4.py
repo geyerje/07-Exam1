@@ -2,8 +2,8 @@
 Exam 1, problem 4.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  March 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and James (Bo) Geyer.  March 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -112,6 +112,16 @@ def run_test_problem4():
 
 
 def problem4(m):
+    total = 0
+    for k in range(m-1):
+        if k+1==1:
+            total = total
+        else:
+            if m % (k+1) == 0:
+                total = total + 1
+    return total
+
+
     """
     What comes in:  Positive integer m.
     What goes out:  Returns the number of non-trival FACTORS of m, where:
@@ -135,7 +145,7 @@ def problem4(m):
                                  (i.e., it is prime)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
