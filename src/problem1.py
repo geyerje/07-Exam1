@@ -2,8 +2,8 @@
 Exam 1, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  March 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and James (Bo) Geyer.  March 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the   product_of_digits   function below.
+# Done: 2.  READ the doc-string for the   product_of_digits   function below.
 #           Ask your instructor for help if you do not understand it.
 #
 #   Once you are confident that you understand the doc-string
@@ -166,6 +166,13 @@ def run_test_problem1a():
 #    **  the appropriate function(s) that are defined above.
 ###############################################################################
 def problem1a(a, b, threshold):
+    total = 0
+    for k in range(b-a+1):
+        if product_of_digits(a+k) < threshold:
+            total = total + a + k
+    return total
+
+
     """
     What comes in:
       -- Positive integers a and b with a <= b
@@ -196,7 +203,7 @@ def problem1a(a, b, threshold):
               returns 109 + 110 + 111 + 112 + 120 + 121 + 130,  which is 813
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT NOTE
@@ -209,7 +216,7 @@ def problem1a(a, b, threshold):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement at least 4 tests of the problem1b function.
+    # Done: 4. Implement at least 4 tests of the problem1b function.
     #   Note that you CANNOT use  problem1b(1)  or  problem1b(2)  as tests, per
     #   the specification below that says that the argument must be at least 3.
     # -------------------------------------------------------------------------
@@ -218,6 +225,37 @@ def run_test_problem1b():
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
 
+ # Test 1:
+    expected =3
+    answer = problem1b(3)
+    print()
+    print('Test 1 is: problem1b(3)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 2:
+    expected =64
+    answer = problem1b(4)
+    print()
+    print('Test 2 is: problem1b(4)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 3:
+    expected = 143
+    answer = problem1b(5)
+    print()
+    print('Test 3 is: problem1b(5)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 4:
+    expected =682
+    answer = problem1b(8)
+    print()
+    print('Test 4 is: problem1b(8)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
 
 ###############################################################################
 # IMPORTANT note: in the following problem,
@@ -226,6 +264,12 @@ def run_test_problem1b():
 #    **  possibly including ones you have written.
 ###############################################################################
 def problem1b(r):
+    total = 0
+    for k in range(r**2 - r +1):
+        if product_of_digits(r+k) <= r:
+            total = total + r + k
+    return total
+
     """
     What comes in:  An integer r that is at least 3.
     What goes out:  Returns the sum of the numbers from r to (r squared),
@@ -239,7 +283,7 @@ def problem1b(r):
            and the sum of the above numbers is 682
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          See the IMPORTANT NOTE just before the DEF above.
     # -------------------------------------------------------------------------
 
